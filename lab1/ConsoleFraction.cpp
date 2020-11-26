@@ -14,17 +14,58 @@ void ConsoleFraction::init()
 		std::cin >> a >> b;
 		fb.set(a, b);
 
-		std::cin >> a;
+		std::cout << "0 - test the assignment operator;\n1 - test operator +;\n2 - test operator-;\n3 - test operator *;\n4 - test operator /;\n5 - to check the function of the comparison.\n";
+		while (true) 
+		{
+			std::cin >> a;
+			if (a > 5 || a < -1)
+			{
+				std::cout << "command error\n";
+			}
+			else break;
+		}
 		switch (a)
 		{
-		case 0:fb = fa; fb.set(5, 6); std::cout << "b=a b=" << fb.getChis() << "/" << fb.getZnam() << "\n" << "a =" << fa.getChis() << "/" << fa.getZnam() << "\n"; break;
-		case 1:fb = fb + fa; std::cout << "b+a =" << fb.getChis() << "/" << fb.getZnam() << "\n"; break;
-		case 2:fb = fb - fa; std::cout << "b-a =" << fb.getChis() << "/" << fb.getZnam() << "\n"; break;
-		case 3:fb = fb * fa; std::cout << "b*a =" << fb.getChis() << "/" << fb.getZnam() << "\n"; break;
-		case 4:fb = fb / fa; std::cout << "b/a =" << fb.getChis() << "/" << fb.getZnam() << "\n"; break;
-		case 5:std::cout << fb.Comparison(fa) << "\n"; break;
+			
+		case 0:fb = fa; fb.set(5, 6); 
+			std::cout << "b=a b=";
+			pprint(fb);
+			std::cout << " a=";
+			pprint(fa);
+			std::cout << "\n";
+			break;
+		case 1:
+			fb = fb + fa; 
+			std::cout << "b+a = ";
+			pprint(fb);
+			std::cout << "\n";
+			break;
+		case 2:
+			fb = fb - fa; 
+			std::cout << "b-a =";
+			pprint(fb);
+			std::cout << "\n";
+			break;
+		case 3:
+			fb = fb * fa; 
+			std::cout << "b*a =";
+			pprint(fb);
+			std::cout << "\n";
+			break;
+		case 4:
+			fb = fb / fa; 
+			pprint(fb);
+			std::cout << "\n";
+			break;
+		case 5:
+			std::cout <<"-1=exc, 0= a==b, 1= a>b, 2= a<b:"<< fb.Comparison(fa) << "\n";
+			break;
 		}
 		if (a == -1)
 			break;
 	}
+};
+void ConsoleFraction::pprint(Fraction buf)
+{
+	std::cout << buf.getNumerals() << "/" << buf.getDenominator() << " exc:" << buf.getException();
 };

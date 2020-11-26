@@ -7,4 +7,5 @@ public:
 	ConsoleFraction();
 	~ConsoleFraction();
 	void init();
+	void pprint(Fraction buf);
 };

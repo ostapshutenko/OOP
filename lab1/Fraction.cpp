@@ -1,59 +1,57 @@
 #include "Fraction.h"
 #include <cstdlib>
-Fraction::Fraction(int chislit, int znamenat)
+Fraction::Fraction(int numerals, int denominator)
 
 {
-
+	this->set(numerals, denominator);
+	/*
 	try
 	{
-		if (znamenat == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
 		else
 		{
-		this->a = chislit;
-		this->b = znamenat;
+		this->numerals = numerals;
+		this->denominator = denominator;
+		this->except = false;
 		}
 	}
 	catch (int thr)
 	{
-		this->a = chislit;
-		this->b = 1;
-		exit(1);
+		if (thr == 1)
+		{
+			this->except = true;
+		}
 	}
+	*/
 }
 
 
 
 // Сложение
 
-Fraction Fraction::operator+(Fraction& s)
+Fraction Fraction::operator+(Fraction& buf)
 
 {
 	Fraction Sum;
 
 	// Приводим обе дроби к общему знаменателю
 
-	Sum.a = a * s.b + b * s.a;
+	Sum.numerals = numerals * buf.denominator + denominator * buf.numerals;
 
-	Sum.b = b * s.b;
-
+	Sum.denominator = denominator * buf.denominator;
+	this->except = false;
 	try
 	{
-		if (Sum.b == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (Sum.denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
-
-		// Знаменатель конечной дроби равен произведению числителя второй дроби и числителя второй
-
-		else {
-			// Знаменатель конечной дроби равен произведению знаменателя первой и второй дроби
-			Sum.b = b * s.b;
-		}
-
 	}
 	catch (int thr)
 	{
-		exit(1);
-		Sum.b = 1;
+		if (thr == 1)
+		{
+			Sum.except = true;
+		}
 	}
 
 	// Возвращаем новую дробь, являющейся суммой первой и второй дроби
@@ -61,34 +59,30 @@ Fraction Fraction::operator+(Fraction& s)
 	return Sum.Reduction();
 }
 // разность
-Fraction Fraction::operator-(Fraction& s)
+Fraction Fraction::operator-(Fraction& buf)
 
 {
 	Fraction Sum;
 
 	// Приводим обе дроби к общему знаменателю
 
-	Sum.a = a * s.b - b * s.a;
+	Sum.numerals = numerals * buf.denominator - denominator * buf.numerals;
 
-	Sum.b = b * s.b;
+	Sum.denominator = denominator * buf.denominator;
+	
+	Sum.except = false;
 
 	try
 	{
-		if (Sum.b == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (Sum.denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
-
-		// Знаменатель конечной дроби равен произведению числителя второй дроби и числителя второй
-
-		else {
-			// Знаменатель конечной дроби равен произведению знаменателя первой и второй дроби
-			Sum.b = b * s.b;
-		}
-
 	}
 	catch (int thr)
 	{
-		exit(1);
-		Sum.b = 1;
+		if (thr == 1)
+		{
+			this->except = true;
+		}
 	}
 
 	// Возвращаем новую дробь, разностью суммой первой и второй дроби
@@ -97,7 +91,7 @@ Fraction Fraction::operator-(Fraction& s)
 }
 // Умножение
 
-Fraction Fraction::operator*(Fraction& s)
+Fraction Fraction::operator*(Fraction& buf)
 
 {
 
@@ -105,30 +99,25 @@ Fraction Fraction::operator*(Fraction& s)
 
 	// Числитель конечной дроби равен произведению числителя первой и второй дроби
 
-	Mult.a = a * s.a;
+	Mult.numerals = numerals * buf.numerals;
 
 	
-	Mult.b = b * s.b;
-
+	Mult.denominator = denominator * buf.denominator;
+	
+	Mult.except = false;
 	// Возвращаем новую дробь, являющейся произведением первой и второй дроби
 
 	try
 	{
-		if (Mult.b == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (Mult.denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
-
-		// Знаменатель конечной дроби равен произведению числителя второй дроби и числителя второй
-
-		else {
-			// Знаменатель конечной дроби равен произведению знаменателя первой и второй дроби
-			Mult.b = b * s.b;
-		}
-
 	}
 	catch (int thr)
 	{
-		exit(1);
-		Mult.b = 1;
+		if (thr == 1)
+		{
+			this->except = true;
+		}
 	}
 
 	return Mult.Reduction();
@@ -137,7 +126,7 @@ Fraction Fraction::operator*(Fraction& s)
 
 // Деление
 
-Fraction Fraction::operator/(Fraction& s)
+Fraction Fraction::operator/(Fraction& buf)
 
 {
 
@@ -145,26 +134,22 @@ Fraction Fraction::operator/(Fraction& s)
 
 	// Числитель конечной дроби равен произведению числителя первой дроби и знаменателя второй
 
-	Div.a = a * s.b;
-
+	Div.numerals = numerals * buf.numerals;
+	Div.denominator = denominator * buf.numerals;
+	Div.except = false;
 	// Проверка на то что числитель второй дроби не равен 0
 
 	try
 	{
-		if (Div.b == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (Div.denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
-
-		// Знаменатель конечной дроби равен произведению числителя второй дроби и числителя второй
-
-		else {
-			Div.b = b * s.a;
-		}
-
 	}
 	catch(int thr)
 	{
-		exit(1);
-		Div.b = 1;
+		if (thr == 1)
+		{
+			Div.except = true;
+		}
 	}
 
 	// Возвращаем дробь поделенную на другую
@@ -181,27 +166,25 @@ Fraction Fraction::Reduction()
 
 	Fraction Red;
 
-	Red.a = a;
+	Red.numerals = numerals;
 
-	Red.b = b;
-
+	Red.denominator = denominator;
+	int containers = numerals;
+	if (numerals > denominator)
+		containers = denominator;
 	// Ищем общий делитель для числителя и знаменателя, чтобы сократить дробь
 
-	for (int i = 1; i <= a && i <= b; i++)
+	for (int i=1;i<=containers; i++)
 
 	{
 
-		int aa = a % i;
-
-		int bb = b % i;
-
-		if (!(a % i) && !(b % i))
+		if ((numerals % i)==0 && (denominator % i)==0)
 
 		{
 
-			Red.a = a / i;
+			Red.numerals = numerals / i;
 
-			Red.b = b / i;
+			Red.denominator = denominator / i;
 
 		}
 
@@ -210,12 +193,11 @@ Fraction Fraction::Reduction()
 	// Возвращаем сокращённую дробь
 
 	return Red;
-
 }
 
 // Сравнение
 
-int Fraction::Comparison(Fraction& s)
+int Fraction::Comparison(Fraction& buf)const
 
 {
 
@@ -223,25 +205,26 @@ int Fraction::Comparison(Fraction& s)
 
 	// Приводим обе дроби к общему знаменателю
 
-	d1.a = a * s.b;
+	d1.numerals = numerals * buf.denominator;
 
-	d1.b = b * s.b;
+	d1.denominator = denominator * buf.denominator;
 
-	d2.a = s.a * b;
+	d2.numerals = buf.numerals * denominator;
 
-	d2.b = s.b * b;
+	d2.denominator = buf.denominator * denominator;
 
-	// Сравниваем числителя после приведения к общему знаменателю
+	if (this->except || buf.except)
+		return -1;
 
-	if (d1.a > d2.a)
+	if (d1.numerals > d2.numerals)
 
 		return 1;
 
-	if (d1.a < d2.a)
+	if (d1.numerals < d2.numerals)
 
 		return 2;
 
-	if (d1.a == d2.a)
+	if (d1.numerals == d2.numerals)
 
 		return 0;
 
@@ -249,58 +232,62 @@ int Fraction::Comparison(Fraction& s)
 
 // Вывод
 
-int Fraction::getChis()
+
+bool Fraction::getException()const
 {
-	return this->a;
+	return this->except;
 }
-int Fraction::getZnam()
+
+int Fraction::getNumerals()const
 {
-	return this->b;
+	return this->numerals;
+}
+int Fraction::getDenominator()const
+{
+	return this->denominator;
 }
 
 // Инициализация дроби(изменение) - числителя и знаменателя 
 
-void Fraction::set(int a, int b)
+void Fraction::set(int numerals, int denominator)
 
 {
-	this->a = a;
+	this->numerals = numerals;
+	this->denominator = denominator;
+	this->except = false;
 
 	try
 	{
-		if (b == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
-		else
-		{
-			this->b = b;
-		}
 	}
 	catch (int thr)
 	{
-		exit(1);
-		this->b = 1;
+		if (thr == 1)
+		{
+			this->except = true;
+		}
 	}
-
-	
 }
-void Fraction::setChisl(int a)
+void Fraction::setNumerals(int numerals)
 
 {
-	this->a = a;
+	this->numerals = numerals;
 }
-void Fraction::setZnam(int b)
+void Fraction::setDenominator(int denominator)
 {
+	this->denominator = denominator;
+	this->except = false;
 	try
 	{
-		if (b == 0)
+		if (denominator == 0)
 			throw 1;
-		else
-		{
-		this->b = b;
-		}
 	}
 	catch (int thr)
 	{
-		exit(1);
-		this->b = 1;
+		if (thr == 1)
+		{
+			this->except = true; 
+		}
 	}
 }
