@@ -48,10 +48,9 @@ Fraction Fraction::operator+(Fraction& buf)
 	}
 	catch (int thr)
 	{
-		if (thr == 1)
-		{
+		
 			Sum.except = true;
-		}
+		
 	}
 
 	// Возвращаем новую дробь, являющейся суммой первой и второй дроби
@@ -79,10 +78,9 @@ Fraction Fraction::operator-(Fraction& buf)
 	}
 	catch (int thr)
 	{
-		if (thr == 1)
-		{
-			this->except = true;
-		}
+	
+			Sum.except = true;
+		
 	}
 
 	// Возвращаем новую дробь, разностью суммой первой и второй дроби
@@ -114,10 +112,9 @@ Fraction Fraction::operator*(Fraction& buf)
 	}
 	catch (int thr)
 	{
-		if (thr == 1)
-		{
-			this->except = true;
-		}
+
+			Mult.except = true;
+		
 	}
 
 	return Mult.Reduction();
@@ -141,15 +138,14 @@ Fraction Fraction::operator/(Fraction& buf)
 
 	try
 	{
-		if (Div.denominator == 0) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
+		if (Div.denominator == 0 || buf.denominator) // Если знаменатель равен нулю, то мы предупреждаем о неправильном вводе данных
 			throw 1;
 	}
 	catch(int thr)
 	{
-		if (thr == 1)
-		{
+
 			Div.except = true;
-		}
+		
 	}
 
 	// Возвращаем дробь поделенную на другую
@@ -190,6 +186,8 @@ Fraction Fraction::Reduction()
 
 	}
 
+	if (Red.denominator == 0)
+		Red.except = true;
 	// Возвращаем сокращённую дробь
 
 	return Red;
@@ -263,10 +261,9 @@ void Fraction::set(int numerals, int denominator)
 	}
 	catch (int thr)
 	{
-		if (thr == 1)
-		{
+
 			this->except = true;
-		}
+
 	}
 }
 void Fraction::setNumerals(int numerals)
@@ -285,9 +282,8 @@ void Fraction::setDenominator(int denominator)
 	}
 	catch (int thr)
 	{
-		if (thr == 1)
-		{
+
 			this->except = true; 
-		}
+
 	}
 }

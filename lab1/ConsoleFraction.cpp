@@ -3,7 +3,7 @@ ConsoleFraction::ConsoleFraction() {};
 ConsoleFraction::~ConsoleFraction() {};
 void ConsoleFraction::init()
 {
-	Fraction fa, fb;
+	Fraction fa, fb,fc;
 	while (true)
 	{
 		std::cout << "type first Fraction\n";
@@ -35,26 +35,26 @@ void ConsoleFraction::init()
 			std::cout << "\n";
 			break;
 		case 1:
-			fb = fb + fa; 
+			fc = (fb + fa); 
 			std::cout << "b+a = ";
-			pprint(fb);
+			pprint(fc);
 			std::cout << "\n";
 			break;
 		case 2:
-			fb = fb - fa; 
+			fc = (fb - fa); 
 			std::cout << "b-a =";
-			pprint(fb);
+			pprint(fc);
 			std::cout << "\n";
 			break;
 		case 3:
-			fb = fb * fa; 
+			fc = (fb * fa); 
 			std::cout << "b*a =";
-			pprint(fb);
+			pprint(fc);
 			std::cout << "\n";
 			break;
 		case 4:
-			fb = fb / fa; 
-			pprint(fb);
+			fc = (fb / fa); 
+			pprint(fc);
 			std::cout << "\n";
 			break;
 		case 5:
