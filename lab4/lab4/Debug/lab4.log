@@ -1,0 +1,7 @@
+﻿  Console.cpp
+  FlightSchedule.cpp
+  lab4.cpp
+  Read_in_file.cpp
+  Создание кода...
+C:\Users\Ostap_Shut\source\repos\lab4\lab4\Console.cpp(46): warning C4715: Console::init: значение возвращается не при всех путях выполнения
+  lab4.vcxproj -> C:\Users\Ostap_Shut\source\repos\lab4\Debug\lab4.exe
