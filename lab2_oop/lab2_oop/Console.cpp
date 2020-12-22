@@ -4,19 +4,14 @@ void Console::init() {
 	std::cout << "search: 1 - Figure 2 - Pentagon 3 - Rectangle\n";
 	int search;
 	std::cin >> search;
-	/*switch (search)
+	switch (search)
 	{
 	case 1:viewFigure(); break;
 	case 2:viewPentagon(); break;
 	case 3:viewRectangle(); break;
 	default:break;
-	}*/
-	if (search == 1)
-		viewFigure();
-	else if (search == 2)
-		viewPentagon();
-	else if (search == 3)
-		viewFigure();
+	}
+
 //	std::cout << "ok";
 };
 int Console::viewPentagon()
@@ -41,7 +36,6 @@ int Console::viewPentagon()
 		Fig.del(n);
 		for (int i = 0; i < Fig.len(); i++)
 			pprint(Fig.getPoint(i));
-		Fig.~Pentagon();
 		return 0;
 };
 int Console::viewRectangle()
@@ -66,7 +60,7 @@ int Console::viewRectangle()
 		Fig.del(n);
 		for (int i = 0; i < Fig.len(); i++)
 			pprint(Fig.getPoint(i));
-		Fig.~Rectangle();
+
 		return 0;
 };
 int Console::viewFigure()
@@ -95,7 +89,7 @@ int Console::viewFigure()
 		
 		for (int i = 0; i < Fig.len(); i++)
 			pprint(Fig.getPoint(i));
-		Fig.~Figure();
+	
 	}
 	else
 		std::cout << "there is no such figure";

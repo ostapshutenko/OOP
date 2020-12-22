@@ -14,6 +14,6 @@ Rectangle::Rectangle() {
 };
 
 Rectangle::~Rectangle() {
-	Figure::~Figure();
+	
 	//delete[] _ptr;
 };

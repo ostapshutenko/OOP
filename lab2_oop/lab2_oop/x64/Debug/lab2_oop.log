@@ -1,9 +1,4 @@
-﻿  Console.cpp
-  Figure.cpp
-C:\Users\Ostap_Shut\source\repos\lab2_oop\lab2_oop\Figure.cpp(156,29): warning C4101: e: неиспользованная локальная переменная
-  Pentagon.cpp
+﻿  Pentagon.cpp
   Rectangle.cpp
-  lab2_oop.cpp
   Создание кода...
-C:\Users\Ostap_Shut\source\repos\lab2_oop\lab2_oop\Figure.cpp(165): warning C4715: Figure::getPoint: значение возвращается не при всех путях выполнения
   lab2_oop.vcxproj -> C:\Users\Ostap_Shut\source\repos\lab2_oop\x64\Debug\lab2_oop.exe

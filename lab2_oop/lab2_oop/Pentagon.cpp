@@ -7,7 +7,7 @@ Pentagon::Pentagon() {
 
 
 Pentagon::~Pentagon() {
-	Figure::~Figure();
+
 	//delete[] _ptr;
 };
 bool Pentagon::isExist() {
