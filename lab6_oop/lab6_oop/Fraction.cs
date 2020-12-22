@@ -39,7 +39,7 @@ namespace lab6_oop
 
 			Sum._denominator = _denominator * buf._denominator;
 
-			//Sum.Reduction();
+			Sum.Reduction();
 
 			return Sum;
 		}
