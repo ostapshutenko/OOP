@@ -1,0 +1,9 @@
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\bin\Debug\lab6_oop.exe.config
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\bin\Debug\lab6_oop.exe
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\bin\Debug\lab6_oop.pdb
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.csprojAssemblyReference.cache
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.Form1.resources
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.Properties.Resources.resources
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.csproj.GenerateResource.cache
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.exe
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.pdb
