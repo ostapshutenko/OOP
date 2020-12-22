@@ -7,3 +7,4 @@ C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.Properties
 C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.csproj.GenerateResource.cache
 C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.exe
 C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.pdb
+C:\Users\Ostap_Shut\source\repos\lab6_oop\lab6_oop\obj\Debug\lab6_oop.Form2.resources
