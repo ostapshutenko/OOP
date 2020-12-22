@@ -45,7 +45,7 @@ int Console::init()
 	cout << ptr1->info();
 
 	// Ввод типа фигуры
-	cout << "Выберете тип фигуры: ";
+	cout << "\nВыберете тип фигуры: ";
 	cin >> symbol;
 
 	// Вывод информации о фигуре
@@ -53,26 +53,29 @@ int Console::init()
 	cout << ptr2->info();
 
 	// Вызов операций сравнения, включения и пересечения двух фигур
-	op.Compare(ptr1, ptr2);
-	op.IsIntersect(ptr1, ptr2);
-	op.IsInclude(ptr1, ptr2);
+	if ((ptr1->Id == 'T' || ptr1->Id == 'R') && (ptr2->Id == 'T' || ptr2->Id == 'R'))
+	{
+		op.Compare(ptr1, ptr2);
+		op.IsIntersect(ptr1, ptr2);
+		op.IsInclude(ptr1, ptr2);
+	}
 	double angle;
-	cout << "введите 1 угол поворота: ";
+	cout << "\nвведите 1 угол поворота: ";
 	cin >> angle;
-	ptr1->Rotate(angle);
+	ptr1->Rotate(angle*M_PI/180);
 	cout << ptr1->info();
-	cout << "введите 2 угол поворота: ";
+	cout << "\nвведите 2 угол поворота: ";
 	cin >> angle;
-	ptr2->Rotate(angle);
+	ptr2->Rotate(angle * M_PI / 180);
 	cout << ptr2->info();
-	cout << "введите 1 смещение: ";
+	cout << "\nвведите 1 смещение: ";
 	double x, y;
 	cin >> x >> y;
 	ptr1->Move(x, y);
 	cout << ptr1->info();
-	cout << "введите 2 смещение: ";
+	cout << "\nвведите 2 смещение: ";
 	cin >> x >> y;
-	ptr1->Move(x, y);
+	ptr2->Move(x, y);
 	cout << ptr2->info();
 	// Очищение памяти
 	delete ptr1;
