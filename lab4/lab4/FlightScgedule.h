@@ -36,5 +36,5 @@ private:
 	int _mode = 0;
 
 	vector<Flight> _vector;
-	map<string, Flight> _mmap;
+	multimap<string, Flight> _mmap;
 };

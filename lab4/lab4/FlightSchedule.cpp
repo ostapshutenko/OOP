@@ -6,6 +6,7 @@ using namespace std;
 	{
 		_mode = nmode;
 	}
+
 	int FlightSchedule::mode()const
 	{
 		return _mode;
@@ -60,11 +61,6 @@ using namespace std;
 			_mmap.insert(pair<string, Flight>(buf._destPoint, buf));
 		}
 	};
-
-
-
-
-
 	
 	string FlightSchedule::printinfo(Date& depDate, string& dstPoint)
 	{

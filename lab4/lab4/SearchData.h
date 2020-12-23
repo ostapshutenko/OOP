@@ -5,12 +5,12 @@
 struct SearchData
 {
 
-	Date searchDate;
+	Date _searchDate;
 	std::string searchDst;
-	SearchData(Date searchDate, std::string searchDst) : searchDate(searchDate), searchDst(searchDst) {}
+	SearchData(Date searchDate, std::string searchDst) : _searchDate(searchDate), searchDst(searchDst) {}
 
 	bool operator()(Flight temp)
 	{
-		return temp._departureDate == searchDate && temp._destPoint == searchDst;
+		return temp._departureDate == _searchDate && temp._destPoint == searchDst;
 	}
 };
