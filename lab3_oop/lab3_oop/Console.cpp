@@ -5,24 +5,24 @@ Point* Console::enter_Point(char c) {
 	{
 		Point* ptr = new Point[3];
 		cout << "enter 1 vertex\n";
-		cin >> ptr[0].x >> ptr[0].y;
+		cin >> ptr[0].X >> ptr[0].Y;
 		cout << "enter 2 vertex\n";
-		cin >> ptr[1].x >> ptr[1].y;
+		cin >> ptr[1].X >> ptr[1].Y;
 		cout << "enter 3 vertex\n";
-		cin >> ptr[2].x >> ptr[2].y;
+		cin >> ptr[2].X >> ptr[2].Y;
 		return ptr;
 	}
 	else if (c == 'R')
 	{
 		Point* ptr = new Point[4];
 		cout << "enter 1 vertex\n";
-		cin >> ptr[0].x >> ptr[0].y;
+		cin >> ptr[0].X >> ptr[0].Y;
 		cout << "enter 2 vertex\n";
-		cin >> ptr[1].x >> ptr[1].y;
+		cin >> ptr[1].X >> ptr[1].Y;
 		cout << "enter 3 vertex\n";
-		cin >> ptr[2].x >> ptr[2].y;
+		cin >> ptr[2].X >> ptr[2].Y;
 		cout << "enter 4 vertex\n";
-		cin >> ptr[3].x >> ptr[3].y;
+		cin >> ptr[3].X >> ptr[3].Y;
 		return ptr;
 	}
 	return nullptr;
@@ -53,7 +53,7 @@ int Console::init()
 	cout << ptr2->info();
 
 	// Вызов операций сравнения, включения и пересечения двух фигур
-	if ((ptr1->Id == 'T' || ptr1->Id == 'R') && (ptr2->Id == 'T' || ptr2->Id == 'R'))
+	if ((ptr1->_Id_type == 'T' || ptr1->_Id_type == 'R') && (ptr2->_Id_type == 'T' || ptr2->_Id_type == 'R'))
 	{
 		op.Compare(ptr1, ptr2);
 		op.IsIntersect(ptr1, ptr2);

@@ -3,7 +3,7 @@
 #include <cmath>
 //#include <vld.h>
 using namespace std;
-#include "Figure.h"
+#include "Operations.h"
 // в библиотеке нет константы
 #define M_PI 3.14159265358979323846
 
