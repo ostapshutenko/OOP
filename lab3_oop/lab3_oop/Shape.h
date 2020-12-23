@@ -5,12 +5,10 @@
 
 class Shape
 {
-protected:
-	Point* _point_arr;
-	char _Id_type;
 public:
 
-		
+	Point* _point_arr;		
+	char _Id_type;			
 
 	virtual ~Shape() {}
 
