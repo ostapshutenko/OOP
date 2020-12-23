@@ -17,8 +17,6 @@ Fraction::Fraction(Fraction& f)
 }
 */
 
-// Сложение
-
 Fraction Fraction::operator+(Fraction& buf)
 {
 	Fraction Sum;
@@ -31,26 +29,24 @@ Fraction Fraction::operator+(Fraction& buf)
 
 	return Sum;
 }
-// разность
+
 Fraction Fraction::operator-(Fraction& buf)
 {
 	Fraction Sum;
 
-	// Приводим обе дроби к общему знаменателю
 
 	Sum._numerals = _numerals * buf._denominator - _denominator * buf._numerals;
 
 	Sum._denominator = _denominator * buf._denominator;
+
 	Sum.Reduction();
+
 	return Sum;
 }
-// Умножение
 
 Fraction Fraction::operator*(Fraction& buf)
 {
 	Fraction Mult;
-
-	// Числитель конечной дроби равен произведению числителя первой и второй дроби
 
 	Mult._numerals = _numerals * buf._numerals;
 
@@ -62,26 +58,18 @@ Fraction Fraction::operator*(Fraction& buf)
 
 }
 
-// Деление
-
 Fraction Fraction::operator/(Fraction& buf)
 {
 	Fraction Div;
 
-	// Числитель конечной дроби равен произведению числителя первой дроби и знаменателя второй
-
 	Div._numerals = _numerals * buf._denominator;
 	Div._denominator = _denominator * buf._numerals;
-
-	// Возвращаем дробь поделенную на другую
 
 	Div.Reduction();
 
 	return Div;
 
 }
-
-// Сокращение
 
 Fraction Fraction::Reduction()
 {
@@ -109,13 +97,9 @@ Fraction Fraction::Reduction()
 	return Red;
 }
 
-// Сравнение
-
 int Fraction::Comparison(Fraction& buf)const
 {
 	Fraction d1, d2;
-
-	// Приводим обе дроби к общему знаменателю
 
 	d1._numerals = _numerals * buf._denominator;
 
@@ -141,8 +125,6 @@ int Fraction::Comparison(Fraction& buf)const
 		return 0;
 
 }
-
-// Вывод
 
 bool Fraction::getException()const
 {

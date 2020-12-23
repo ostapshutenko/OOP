@@ -17,7 +17,7 @@ void ConsoleFraction::init()
 		fb.setNumerals(a);
 		fb.setDenominator(b);
 		std::cout << "\n0 - test the assignment operator;\n1 - test operator +;\n2 - test operator-;\n3 - test operator *;\n4 - test operator /;\n5 - to check the function of the comparison.\n";
-		a = command();
+		a = Ñommand();
 		switch (a)
 		{			
 		case 0:	
@@ -62,7 +62,7 @@ void ConsoleFraction::init()
 	}
 };
 
-int ConsoleFraction::command()
+int ConsoleFraction::Ñommand()
 {
 	int a;
 	while (true)

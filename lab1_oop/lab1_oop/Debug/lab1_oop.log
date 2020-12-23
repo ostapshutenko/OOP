@@ -1,3 +1,6 @@
-﻿  Fraction.cpp
-C:\Users\Ostap_Shut\source\repos\lab1_oop\lab1_oop\Fraction.cpp(143): warning C4715: Fraction::Comparison: значение возвращается не при всех путях выполнения
+﻿  ConsoleFraction.cpp
+  Fraction.cpp
+  lab1_oop.cpp
+  Создание кода...
+C:\Users\Ostap_Shut\source\repos\lab1_oop\lab1_oop\Fraction.cpp(127): warning C4715: Fraction::Comparison: значение возвращается не при всех путях выполнения
   lab1_oop.vcxproj -> C:\Users\Ostap_Shut\source\repos\lab1_oop\Debug\lab1_oop.exe

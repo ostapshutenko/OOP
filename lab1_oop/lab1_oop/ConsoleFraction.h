@@ -6,7 +6,7 @@ class ConsoleFraction
 public:
 	ConsoleFraction();
 	~ConsoleFraction();
-	int command();
+	int Ñommand();
 	void init();
 	void pprint(Fraction buf);
 };
